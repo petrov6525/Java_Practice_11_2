@@ -1,0 +1,10 @@
+<table border="1" th:fragment="single_product_table">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td th:text="${product.getName()}"></td>
+        <td th:text="${product.getPrice()}"></td>
+    </tr>
+</table>

@@ -1,0 +1,22 @@
+<form th:fragment="customer_form"
+      th:action="${'/'+ action}+'-customer'"
+      method="post">
+  <input type="hidden" name="id" th:value="${customer != null ? customer.getId() : ''}"/>
+  <label>
+    Name:
+    <input type="text" name="name"
+           th:value="${customer != null ? customer.getName() : ''}" required/>
+  </label>
+  <label>
+    Email:
+    <input type="email" name="email"
+           th:value="${customer != null ? customer.getEmail() : ''}" required/>
+  </label>
+  <label>
+    Phone:
+    <input type="text" name="phone"
+           th:value="${customer !=null ? customer.getPhone() : ''}" required/>
+
+  </label>
+  <button th:text="${#strings.toUpperCase(action)}"></button>
+</form>

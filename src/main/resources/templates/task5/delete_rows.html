@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/index.css"/>
+</head>
+<body>
+  <header th:insert="~{sections/header :: header}">
+
+  </header>
+<h1>Delete Rows</h1>
+  <h2>Delete Customer</h2>
+  <div>
+      <form action="/delete-customer" method="post">
+          <label>
+              Customer Id:
+              <select name="id">
+                  <option th:each="customer : ${customers}" th:value="${customer}" th:text="${customer}">
+
+                  </option>
+              </select>
+          </label>
+          <button>Delete</button>
+      </form>
+  </div>
+
+  <h2>Delete Sales Man</h2>
+  <div>
+      <form action="/delete-sales-man" method="post">
+          <label>
+              Sales Man Id:
+              <select name="id">
+                  <option th:each="salesMan : ${salesMen}" th:value="${salesMan}" th:text="${salesMan}">
+
+                  </option>
+              </select>
+          </label>
+          <button>Select</button>
+      </form>
+  </div>
+
+  <h2>Delete Product Sale</h2>
+  <div>
+      <form action="/delete-product-sale" method="post">
+          <label>
+              Sale Id:
+              <select name="id">
+                  <option th:each="saleId : ${sales}" th:value="${saleId}" th:text="${saleId}">
+
+                  </option>
+              </select>
+          </label>
+          <button>Select</button>
+      </form>
+  </div>
+
+</body>
+</html>

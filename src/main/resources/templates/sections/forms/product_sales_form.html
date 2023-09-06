@@ -1,0 +1,31 @@
+<form th:fragment="product_sales_form"
+      th:action="${'/'+ action}+'-product-sale'"
+      method="post">
+  <input type="hidden" name="id" th:value="${sale != null ? sale.getId() : ''}"/>
+  <label>
+    Product Name:
+    <input type="text" name="product_name"
+           th:value="${sale != null ? sale.Product.getName() : ''}" required/>
+  </label>
+  <label>
+    Sale Price:
+    <input type="text" name="sale_price"
+           th:value="${sale != null ? sale.Product.getPrice() : ''}" required/>
+  </label>
+  <label>
+    Customer Id:
+    <select name="customer_id">
+      <option th:each="customer : ${customers}" th:value="${customer}" th:text="${customer}"
+              th:selected="${sale != null ? customer == sale.Customer.getId() : null}"></option>
+    </select>
+  </label>
+  <label>
+    Sales Man Id:
+    <select name="sales_man_id">
+      <option th:each="man : ${salesMen}" th:value="${man}" th:text="${man}"
+              th:selected="${sale != null ? man == sale.SalesMan.getId() : null}"></option>
+    </select>
+  </label>
+
+  <button th:text="${#strings.toUpperCase(action)}"></button>
+</form>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/index.css"/>
+</head>
+<body>
+  <header th:insert="~{sections/header :: header}">
+
+  </header>
+<h1>Update Rows</h1>
+  <h2>Update Customer</h2>
+  <div>
+      <form action="/get-customer" method="get">
+          <label>
+              Customer Id:
+              <select name="id">
+                  <option th:each="customer : ${customers}" th:value="${customer}" th:text="${customer}">
+
+                  </option>
+              </select>
+          </label>
+          <button>Select</button>
+      </form>
+  </div>
+  <div th:insert="~{sections/forms/customer_form}">
+</div>
+
+  <h2>Update Sales Man</h2>
+  <div>
+      <form action="/get-sales-man" method="get">
+          <label>
+              Sales Man Id:
+              <select name="id">
+                  <option th:each="salesMan : ${salesMen}" th:value="${salesMan}" th:text="${salesMan}">
+
+                  </option>
+              </select>
+          </label>
+          <button>Select</button>
+      </form>
+  </div>
+  <div th:insert="~{sections/forms/sales_man_form}">
+  </div>
+
+  <h2>Update Product Sale</h2>
+  <div>
+      <form action="/get-product-sale" method="get">
+          <label>
+              Sale Id:
+              <select name="id">
+                  <option th:each="saleId : ${sales}" th:value="${saleId}" th:text="${saleId}"
+                          th:selected="${sale != null ? saleId == sale.getId() : null}">
+
+                  </option>
+              </select>
+          </label>
+          <button>Select</button>
+      </form>
+  </div>
+  <div th:insert="~{sections/forms/product_sales_form}">
+  </div>
+</body>
+</html>

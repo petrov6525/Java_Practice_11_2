@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/index.css"/>
+</head>
+<body>
+<header th:insert="~{sections/header :: header}">
+
+</header>
+
+<h1>Sales By Date Diapason</h1>
+<div class="flex">
+    <div class="form">
+        <form action="/get-sales-by-date-diapason" method="get">
+            <label>
+                Choose Begin Date
+                <select name="date_begin">
+                    <option th:each="option : ${optionsBegin}"
+                            th:text="${option}"
+                            th:value="${option}">
+                    </option>
+                </select>
+            </label>
+            <br>
+            <label>
+                Choose End Date
+                <select name="date_end">
+                    <option th:each="option : ${optionsEnd}"
+                            th:text="${option}"
+                            th:value="${option}">
+                    </option>
+                </select>
+            </label>
+            <p>
+                <button>
+                    Select
+                </button>
+            </p>
+        </form>
+    </div>
+    <div th:if="${sales != null}" th:insert="~{sections/sales_table :: sales_table}">
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/index.css"/>
+</head>
+<body>
+  <header th:insert="~{sections/header :: header}">
+
+  </header>
+<h1>Add Rows</h1>
+  <h2>Add Customer</h2>
+  <div th:insert="~{sections/forms/customer_form}">
+</div>
+
+  <h2>Add Sales Man</h2>
+  <div th:insert="~{sections/forms/sales_man_form}">
+  </div>
+
+  <h2>Add Product Sale</h2>
+  <div th:insert="~{sections/forms/product_sales_form}">
+  </div>
+</body>
+</html>

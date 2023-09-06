@@ -1,0 +1,14 @@
+<table border="1" th:fragment="customers_table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+    </tr>
+    <tr th:each="person : ${customers}">
+        <td th:text="${person.getId()}"></td>
+        <td th:text="${person.getName()}"></td>
+        <td th:text="${person.getPhone()}"></td>
+        <td th:text="${person.getEmail()}"></td>
+    </tr>
+</table>

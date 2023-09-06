@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/index.css"/>
+</head>
+<body>
+<header th:insert="~{sections/header :: header}">
+
+</header>
+
+<h1>The Best Customer</h1>
+<div th:text="${customer}+' - '+${maxSum}"></div>
+</body>
+</html>

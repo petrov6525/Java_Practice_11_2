@@ -1,0 +1,28 @@
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    gap: 20px;
+}
+
+form {
+    display: flex;
+    gap: 20px;
+}
+
+.devider {
+    height: 30px;
+    border: 1px solid black;
+}
+
+.flex {
+    display: flex;
+    justify-content: start;
+}
+
+.form {
+    width: 20%;
+}

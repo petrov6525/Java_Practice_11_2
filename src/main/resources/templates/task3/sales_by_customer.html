@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/index.css"/>
+</head>
+<body>
+<header th:insert="~{sections/header :: header}">
+
+</header>
+
+<h1>Sales By Customer</h1>
+<div class="flex">
+    <div class="form">
+        <form action="/get-sales-by-customer" method="get">
+            <label>
+                Choose Customer
+                <select name="customer">
+                    <option th:each="option : ${options}"
+                            th:text="${option}"
+                            th:value="${option}">
+                    </option>
+                </select>
+            </label>
+            <p>
+                <button>
+                    Select
+                </button>
+            </p>
+        </form>
+    </div>
+    <div th:if="${sales != null}" th:insert="~{sections/sales_table :: sales_table}">
+
+    </div>
+</div>
+
+</body>
+</html>

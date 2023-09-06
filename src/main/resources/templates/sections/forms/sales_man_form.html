@@ -1,0 +1,22 @@
+<form th:fragment="sales_man_form"
+      th:action="${'/'+ action}+'-sales-man'"
+      method="post">
+  <input type="hidden" name="id" th:value="${salesMan != null ? salesMan.getId() : ''}"/>
+  <label>
+    Name:
+    <input type="text" name="name"
+           th:value="${salesMan != null ? salesMan.getName() : ''}" required/>
+  </label>
+  <label>
+    Email:
+    <input type="email" name="email"
+           th:value="${salesMan != null ? salesMan.getEmail() : ''}" required/>
+  </label>
+  <label>
+    Phone:
+    <input type="text" name="phone"
+           th:value="${salesMan !=null ? salesMan.getPhone() : ''}" required/>
+
+  </label>
+  <button th:text="${#strings.toUpperCase(action)}"></button>
+</form>
